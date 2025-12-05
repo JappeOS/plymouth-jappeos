@@ -1,2 +1,2 @@
 # plymouth-jappeos
-Plymouth packaging for JappeOS, with JappeOS branding.
+Plymouth packaging for JappeOS, with JappeOS logos & branding.
