@@ -58,7 +58,7 @@ b2sums=('a3d55f4f7be81bdf2ddd5c2b74a3fdb4e368c31fc41e12ab100ce2a7986cb418151b3df
 )
 
 prepare() {
-  cd $pkgname
+  cd 'plymouth'
 
   # Various fixes from upstream
   git cherry-pick -n -m 1 24.004.60..e88c403bda64d301b0434045513551c1ccdee983
@@ -75,7 +75,7 @@ prepare() {
 }
 
 build() {
-  arch-meson $pkgname build \
+  arch-meson 'plymouth' build \
     -D logo="$srcdir/jappeos-logo.png"
   meson compile -C build
 
@@ -88,14 +88,14 @@ package() {
   rm -r "$pkgdir/run"
 
   # Install mkinitcpio hook
-  install -Dm644 plymouth.initcpio_hook "$pkgdir/usr/lib/initcpio/hooks/$pkgname"
-  install -Dm644 plymouth.initcpio_install "$pkgdir/usr/lib/initcpio/install/$pkgname"
+  install -Dm644 plymouth.initcpio_hook "$pkgdir/usr/lib/initcpio/hooks/plymouth"
+  install -Dm644 plymouth.initcpio_install "$pkgdir/usr/lib/initcpio/install/plymouth"
 
   # Install mkinitcpio shutdown hook and systemd drop-in snippet
-  install -Dm644 plymouth-shutdown.initcpio_install "$pkgdir/usr/lib/initcpio/install/$pkgname-shutdown"
+  install -Dm644 plymouth-shutdown.initcpio_install "$pkgdir/usr/lib/initcpio/install/plymouth-shutdown"
   install -Dm644 50-plymouth.conf "$pkgdir/usr/lib/tmpfiles.d/50-plymouth.conf"
-  
+
   # Install logo for the spinner theme
-  install -Dm644 jappeos-logo.png "$pkgdir/usr/share/$pkgname/themes/spinner/watermark.png"
+  install -Dm644 jappeos-logo.png "$pkgdir/usr/share/plymouth/themes/spinner/watermark.png"
 }
 
