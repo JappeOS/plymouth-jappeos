@@ -4,7 +4,7 @@
 # Contributor: Damian01w <damian01w@gmail.com>
 # Contributor: Padfoot <padfoot@exemail.com.au>
 
-pkgname=plymouth
+pkgname=plymouth-jappeos
 pkgver=24.004.60
 pkgrel=14
 pkgdesc='Graphical boot splash screen'
@@ -42,11 +42,12 @@ backup=(
 )
 install='plymouth.install'
 source=(
-  "git+https://gitlab.freedesktop.org/plymouth/$pkgname.git#tag=$pkgver"
+  "git+https://gitlab.freedesktop.org/plymouth/plymouth.git#tag=$pkgver"
   plymouth.initcpio_hook
   plymouth.initcpio_install
   plymouth-shutdown.initcpio_install
   50-plymouth.conf
+  jappeos-logo.png
 )
 b2sums=(
   a3d55f4f7be81bdf2ddd5c2b74a3fdb4e368c31fc41e12ab100ce2a7986cb418151b3df0d0316011710dd0e1ae99631166eecf80bc1dd5cc9054a4685266afed
@@ -97,3 +98,4 @@ package() {
   # Install logo for the spinner theme
   install -Dm644 jappeos-logo.png "$pkgdir/usr/share/$pkgname/themes/spinner/watermark.png"
 }
+
