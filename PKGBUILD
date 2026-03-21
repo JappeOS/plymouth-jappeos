@@ -1,8 +1,4 @@
-# Maintainer: Balló György <ballogyor+arch at gmail dot com>
-# Contributor: Taijian <taijian@posteo.de>
-# Contributor: Sebastian Lau <lauseb644@gmail.com>
-# Contributor: Damian01w <damian01w@gmail.com>
-# Contributor: Padfoot <padfoot@exemail.com.au>
+# Maintainer: Jappe02 <Jappe00001@gmail.com>
 
 pkgname=plymouth-jappeos
 pkgver=24.004.60
