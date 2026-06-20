@@ -1,7 +1,7 @@
 # Maintainer: Jappe02 <Jappe00001@gmail.com>
 
 pkgname=plymouth-jappeos
-pkgver=24.004.60
+pkgver=24.004.60+build.1
 pkgrel=14
 pkgdesc='Graphical boot splash screen'
 arch=(x86_64)
