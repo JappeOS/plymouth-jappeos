@@ -2,7 +2,7 @@
 
 pkgname=plymouth-jappeos
 pkgver=24.004.60+build.1
-pkgrel=14
+pkgrel=1
 pkgdesc='Graphical boot splash screen'
 arch=(x86_64)
 url='https://www.freedesktop.org/wiki/Software/Plymouth/'
