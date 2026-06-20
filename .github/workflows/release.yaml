@@ -18,6 +18,6 @@ jobs:
     uses: JappeOS/jappeos-workflows/.github/workflows/build-package.yml@main
     with:
       package-name: plymouth-jappeos
-      channel: ${{ github.ref_name }}
+      channel: all
       commit-sha: ${{ needs.release.outputs.commit-sha }}
     secrets: inherit
